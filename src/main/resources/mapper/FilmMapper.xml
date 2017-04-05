@@ -28,6 +28,10 @@
            select * from film order by last_update DESC  LIMIT #{cursor},10
          </select>
          
+         <select id="select1" parameterType="com.hand.ssm.dto.Film" resultType="com.hand.ssm.dto.Film">
+           select * from film   LIMIT 0,10
+         </select>
+         
          
          <insert id="insertOneItem" parameterType="com.hand.ssm.dto.Film" >
              insert into film(film_id,title,description,language_id) values(#{filmId},#{title},#{description},#{languageId})

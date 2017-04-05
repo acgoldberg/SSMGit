@@ -1,24 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script  src="../css/jquery-3.2.0.min.js"></script>
-<script type="text/javascript">
- window.onload=function(){
-	var t=document.getElementById("before");
-	alert(t);
-	}
-	
-
-
-</script>
 </head>
 <body>
-
 <center>
  <table cellpadding="0" cellspacing="0" border="1px">
    <tr>
@@ -36,7 +26,6 @@
    <th>special_features</th>
    <th>last_update</th>
   </tr> 
-  
 <c:forEach items="${list}" var="tom">
 <tr>
    <th> <input value="${tom.filmId}" style="border-style:none" readonly/></th>

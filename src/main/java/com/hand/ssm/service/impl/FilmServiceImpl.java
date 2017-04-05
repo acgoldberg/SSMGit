@@ -10,12 +10,6 @@ import com.hand.ssm.dto.Film;
 import com.hand.ssm.mapper.FilmMapper;
 import com.hand.ssm.service.FilmService;
 
-
-
-
-
-
-
 @Service
 @Transactional
 public class FilmServiceImpl implements FilmService {
@@ -27,6 +21,11 @@ public class FilmServiceImpl implements FilmService {
 
 
 	public List<Film> select(Film film) {
+		List<Film> filmList=filmMapper.select(film);
+		return filmList;
+	}
+	
+	public List<Film> select1(Film film) {
 		List<Film> filmList=filmMapper.select(film);
 		return filmList;
 	}

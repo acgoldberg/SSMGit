@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAliases>
          <typeAlias alias="Film" type="com.hand.ssm.dto.Film"/>
     </typeAliases>
+
     
    
     <!-- 映射map -->

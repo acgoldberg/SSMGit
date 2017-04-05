@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+*{font-family:"微软雅黑";}
+/* body{background:"..img/index.gif"} */
+h2{color:white;position:absolute;left:90px;top:36px;}
+.login{
+	width:476px;
+	height:257px;
+	background:white;
+	border: 1px solid white;
+	margin-top:140px;
+	border-radius:5px;
+}
+input{
+	width:248px;
+	height:39px;
+	border-radius:5px;
+	border:1px solid gray;
+}
+.input1{
+	background:#996633;
+}
+
+p{
+	padding-left:10px;
+	color:#0099cc;
+	text-align:left;
+	border-bottom: 1px solid #0099cc;
+	margin-bottom:35px;
+}
+
+span{
+	color:red;
+}

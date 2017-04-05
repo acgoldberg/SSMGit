@@ -7,7 +7,6 @@
     <display-name>Archetype Created Web Application</display-name>
 
  
-
     <!-- 读取spring配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -45,10 +44,25 @@
         <param-name>log4jConfigLocation</param-name>
         <param-value>classpath:conf/log4j.properties</param-value>
     </context-param>
+<!--     <servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.js</url-pattern>  
+    </servlet-mapping> 
+    <servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.css</url-pattern>  
+    </servlet-mapping> 
+    <servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.gif</url-pattern>  
+    </servlet-mapping> 
+    <servlet-mapping>  
+        <servlet-name>default</servlet-name>  
+        <url-pattern>*.jpg</url-pattern>  
+    </servlet-mapping>  -->
    
     <listener>
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
 
- 
 </web-app>

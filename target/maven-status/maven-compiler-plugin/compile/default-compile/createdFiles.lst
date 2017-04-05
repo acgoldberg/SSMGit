@@ -1,5 +1,11 @@
+com\hand\ssm\mapper\CustomerMapper.class
 com\hand\ssm\dto\Film.class
+com\hand\ssm\service\CustomerService.class
+com\hand\ssm\service\FilmService.class
+com\hand\ssm\service\impl\CustomerServiceImpl.class
+com\hand\ssm\controller\CustomerController.class
+com\hand\ssm\controller\InterceptorFirst.class
+com\hand\ssm\dto\Customer.class
 com\hand\ssm\mapper\FilmMapper.class
 com\hand\ssm\service\impl\FilmServiceImpl.class
-com\hand\ssm\service\FilmService.class
 com\hand\ssm\controller\FilmController.class

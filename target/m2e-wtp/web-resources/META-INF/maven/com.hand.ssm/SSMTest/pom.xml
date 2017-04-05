@@ -8,8 +8,6 @@
   <name>SSMTest Maven Webapp</name>
   <url>http://maven.apache.org</url>
     <properties>
-
-
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
 
 
@@ -234,9 +232,9 @@
 
  
 
-        <!-- ��־�ļ������ -->
+       
 
-        <!-- log start -->
+      <!--   log start -->
 
         <dependency>
 
@@ -268,7 +266,7 @@
 
         </dependency>
 
-        <!-- log end -->
+       <!--  log end -->
     
     
     

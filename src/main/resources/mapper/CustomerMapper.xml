@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hand.ssm.mapper.CustomerMapper">
+
+	<resultMap id="login" type="com.hand.ssm.dto.Customer">
+		<result column="customer_id" property="customer_id" jdbcType="DECIMAL" />
+		<result column="first_name" property="first_name" jdbcType="VARCHAR" />
+		<result column="last_name" property="last_name" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="last_update" property="last_update" jdbcType="VARCHAR" />
+		<result column="address" property="address.address" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="check" parameterType="String" resultType="String">
+		select
+		first_name from customer where first_name=#{username}
+	</select>
+
+	<select id="select2" parameterType="com.hand.ssm.dto.Customer"
+		resultType="com.hand.ssm.dto.Customer">
+		select * from customer LIMIT 0,15
+	</select>
+	<select id="select3" resultType="com.hand.ssm.dto.Customer">
+		select * from customer LIMIT
+		0,15
+	</select>
+	<select id="select4" resultType="com.hand.ssm.dto.Customer">
+		select * from customer order by customer_id desc limit 15;
+	</select>
+	<select id="selectbyid" parameterType="Integer" resultMap="login">
+		select
+		customer_id,first_name,last_name,address,email,customer.last_update
+		from customer,address where customer.address_id = address.address_id
+		and customer_id =#{customer_id}
+	</select>
+
+	<select id="delete0">
+		set foreign_key_checks=0;
+	</select>
+
+
+	<select id="delete" parameterType="String" resultType="com.hand.ssm.dto.Customer">
+		set
+		foreign_key_checks=0;
+		delete from customer where
+		customer_id=#{customerId};
+		set foreign_key_checks = 1;
+	</select>
+
+	<select id="delete1">
+		set foreign_key_checks = 1;
+	</select>
+
+	<select id="selectpage" parameterType="Integer" resultMap="login">
+		select
+		customer_id,first_name,last_name,address,email,active,customer.last_update
+		from customer,address where customer.address_id = address.address_id
+		LIMIT #{cursor},15
+		<!-- select * from customer LIMIT #{cursor},15 -->
+	</select>
+
+	<select id="selectAlladdress" resultType="com.hand.ssm.dto.Address">
+		select distinct address
+		from address
+	</select>
+	<select id="selectaddress" parameterType="String" resultType="String">
+		select address_id from address where address = #{address}
+	</select>
+	<update id="update"  parameterType="com.hand.ssm.dto.Customer">
+		set foreign_key_checks=0;
+		
+		update customer set first_name =#{first_name},last_name=#{last_name},email=#{email},address_id=#{address_id}
+		where customer_id=#{customer_id};
+		set foreign_key_checks = 1;
+		
+	</update>
+	
+	<insert id="add" parameterType="com.hand.ssm.dto.Customer">
+		insert into customer(first_name,last_name,email,address_id,active,create_date,last_update,store_id)
+		values(#{first_name},#{last_name},#{email},#{address_id},#{active},#{create_date},#{last_update},#{store_id});
+	</insert>
+
+
+
+</mapper>
